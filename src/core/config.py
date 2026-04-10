@@ -1,6 +1,8 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from pathlib import Path
 
+
+
 class Settings(BaseSettings):
     # App Settings
     PROJECT_NAME: str = "SmartShop Enterprise AI"
@@ -16,7 +18,7 @@ class Settings(BaseSettings):
     CHROMA_PERSIST_DIR: str = str(BASE_DIR / "chroma_db")
     DATA_FILE: str = str(BASE_DIR / "data" / "ecommerce_products.csv")
 
-    # Pydantic will look for these in your .env file
-    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+    # Pydantic will look for these in .env file
+    model_config = SettingsConfigDict(env_file=".env",env_file_encoding='utf-8', extra="ignore")
 
-settings = Settings()
+settings=Settings()
