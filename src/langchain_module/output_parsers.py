@@ -10,7 +10,7 @@ class SmartShopOutputParser(StrOutputParser):
         # Standard string cleanup
         cleaned_text = super().parse(text)
         
-        # Post-processing:
+        # Post-processing
         cleaned_text = cleaned_text.replace("Rs.", "₹").replace("INR", "₹")
         
         return cleaned_text
